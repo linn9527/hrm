@@ -1,15 +1,17 @@
 package com.catore;
 
+import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
 public class Application {
     public static void main(String[] args) {
 
-        SpringApplication.run(Application.class, args);
-
+        SpringApplicationBuilder builder = new SpringApplicationBuilder(Application.class);
+        // 关闭Banner
+        // builder.bannerMode(Banner.Mode.OFF).run();
+        builder.run(args);
     }
 }
